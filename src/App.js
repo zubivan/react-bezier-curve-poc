@@ -10,6 +10,17 @@ class App extends Component {
     controlPoint2: { x: 300, y: 300 }
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        origin: { x: 500 * Math.random(), y: 500 * Math.random() },
+        destination: { x: 500 * Math.random(), y: 500 * Math.random() },
+        controlPoint1: { x: 500 * Math.random(), y: 500 * Math.random() },
+        controlPoint2: { x: 500 * Math.random(), y: 500 * Math.random() }
+      });
+    }, 1000);
+  }
+
   render() {
     const {origin, destination, controlPoint1, controlPoint2} = this.state;
 
